@@ -48,12 +48,15 @@ qodana {
     showReport.set(System.getenv("QODANA_SHOW_REPORT")?.toBoolean() ?: false)
 }
 
+// 控制台中文乱码
+
 tasks {
     // Set the JVM compatibility versions
     properties("javaVersion").let {
         withType<JavaCompile> {
             sourceCompatibility = it
             targetCompatibility = it
+            options.encoding = "UFT-8"
         }
         withType<KotlinCompile> {
             kotlinOptions.jvmTarget = it

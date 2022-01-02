@@ -1,13 +1,14 @@
 <!-- Plugin Configuration File. Read more: https://plugins.jetbrains.com/docs/intellij/plugin-configuration-file.html -->
 <idea-plugin>
     <id>com.github.marioplus.markdirectoryasplugin</id>
-    <name>mark-directory-as-plugin</name>
+    <name>Mark-Directory-as</name>
     <vendor>marioplus</vendor>
 
     <depends>com.intellij.modules.platform</depends>
 
     <extensions defaultExtensionNs="com.intellij">
-        <applicationService serviceImplementation="com.github.marioplus.markdirectoryasplugin.services.MyApplicationService"/>
+        <applicationService
+                serviceImplementation="com.github.marioplus.markdirectoryasplugin.services.MyApplicationService"/>
         <projectService serviceImplementation="com.github.marioplus.markdirectoryasplugin.services.MyProjectService"/>
     </extensions>
 
@@ -15,4 +16,11 @@
         <listener class="com.github.marioplus.markdirectoryasplugin.listeners.MyProjectManagerListener"
                   topic="com.intellij.openapi.project.ProjectManagerListener"/>
     </applicationListeners>
+
+    <actions>
+        <action id="Test.ShowPopupAction" class="com.github.marioplus.markdirectoryasplugin.ShowPopupAction"
+                text="ShowPopup" description="展示一个弹出框">
+            <add-to-group group-id="ToolsMenu" anchor="last"/>
+        </action>
+    </actions>
 </idea-plugin>
