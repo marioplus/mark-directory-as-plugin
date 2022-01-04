@@ -15,11 +15,19 @@
 - [ ] Click the <kbd>Watch</kbd> button on the top of the [IntelliJ Platform Plugin Template][template] to be notified about releases containing new features and fixes.
 
 <!-- Plugin description -->
-This Fancy IntelliJ Platform Plugin is going to be your implementation of the brilliant ideas that you have.
+## Mark XmetaGen As
 
-This specific section is a source for the [plugin.xml](/src/main/resources/META-INF/plugin.xml) file which will be extracted by the [Gradle](/build.gradle.kts) during the build process.
+用于将每个模块下的 `/src/main/xmeta_gen` 目录标记为不同类型的目录
 
-To keep everything working, do not remove `<!-- ... -->` sections. 
+支持标记标记为以下类型: 
+
+- 普通类型
+- 源
+- 测试源
+- 生成的源
+- 资源
+- 测试资源
+
 <!-- Plugin description end -->
 
 ## Installation

@@ -1,10 +1,18 @@
 <!-- Plugin Configuration File. Read more: https://plugins.jetbrains.com/docs/intellij/plugin-configuration-file.html -->
 <idea-plugin>
     <id>com.github.marioplus.markdirectoryasplugin</id>
-    <name>Mark-Directory-as</name>
+    <name>Mark XmetaGen As</name>
     <vendor>marioplus</vendor>
 
     <depends>com.intellij.modules.platform</depends>
+    <description>
+        <![CDATA[
+        <h2>Mark XmetaGen as</h2>
+        <ol>
+            <li>用于将每个模块下的 /src/main/xmeta_gen 标记为不同类型的目录</li>
+        </ol>
+]]>
+    </description>
 
     <extensions defaultExtensionNs="com.intellij">
         <applicationService
@@ -18,8 +26,9 @@
     </applicationListeners>
 
     <actions>
-        <action id="Test.ShowPopupAction" class="com.github.marioplus.markdirectoryasplugin.ShowPopupAction"
-                text="ShowPopup" description="展示一个弹出框">
+        <action id="Test.MarkXmetaGenAsAction"
+                class="com.github.marioplus.markdirectoryasplugin.action.MarkXmetaGenAsAction"
+                text="Mark xmeta_gen As" description="标记 xmeta_gen 为生成的源">
             <add-to-group group-id="ToolsMenu" anchor="last"/>
         </action>
     </actions>
